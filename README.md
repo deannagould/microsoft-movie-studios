@@ -21,33 +21,46 @@ The data used in this analysis has been retrieved from [IMDb](https://www.imdb.c
 
 ## Methods
 ***
-This project uses descriptive analysis to summarize information and identify patterns in successful movies. The results are then shown in easy to read visualizations based on the relationships and variables created.
+This project uses descriptive analysis to summarize information and identify patterns in successful movies. The results are then shown in easy to read visualizations based on the relationships and variables created. The data was cleaned by removing null values, splitting up values that were grouped together (genre), changing datatypes when necessaary, and plotting some of the most important information in easy to interpret visuals.
 
-## Results
+# Results and Conclusions
 ***
-While there are many movie genres, **Action** is the top grossing movie genre worldwide.
+## Genre
+While there are many movie genres, **Animation** is the top genre worldwide by gross, followed by **Adventure** and **Sci-fi**.
 
 ![genre](top-genres.png)
 
-Action has more than double the worldwide gross revenue of any other genre. In addition to genre, the directors matter as well. A director's success was evaluated by rating of their movies.
+**Animation** is also the top genre by net profit by a significant amount. Similar to worldwide gross, behind animation is **Adventure**, followed by **Sci-fi**.
+
+![genre-net](top-genres-net.png)
+
+## Directors
+
+In addition to genre, the directors matter as well. In this visual, I evaluate a director's success by average rating, and I also exclude any directors who didn't produce profitable movies.
 
 ![director](top-directors.png)
 
-How much money a movie makes can also be predicted by how much was invested into the movie, also known as the production budget. The scatter plot below shows multiple data points with a movie's production budget and the worldwide gross.
+Average rating has a positive correlation to net profit, but it's not as strong as the correlation to production budget which I show later. I decided to look at directors by net profit as well to get a better understanding of a director's success, and had some different results.
+
+![director_np](top-directors-np.png)
+
+## Production Budget
+
+How much money a movie makes can also be predicted by how much was invested into the movie, also known as the production budget. The scatter plot below shows multiple data points with a movie's production budget and the worldwide gross. Based on the visual, I would recommend that Microsoft spend **100 Million** on the production budget.
 
 ![budget](budget-gross.png)
 
-## Conclusions
-***
-- In conclusion, Microsoft should create an **Action** movie to earn the highest worldwide gross possible. 
-- Microsoft should focus on hiring directors who produce high ratings. Based on this analysis I recommend Microsoft hires **Shogo Kusano** or **Navot Papushado**.
-- Microsoft should consider spending at least **2 million** on the production of this movie. 
+ 
 
-### Next Steps
+## Next Steps
 Deeper analysis could show more trends in different aspects of movies like release date or run time.
-- **Better prediction of successful movies.** This modeling uses data that is readily available on IMDb, and could be adjusted for more recent movies as well.
+- **Prediction of successful movies.** This modeling uses data that is readily available on IMDb, and could be adjusted for more recent movies as well.
 
-- **Better prediction of unsuccessful movies.** This analysis could also identify movies that will be unsuccessful. Or, if there are limitations such as budget, diagnose where resources could be allocated to create a high rating movie.
+- **Prediction of unsuccessful movies.** This analysis could also identify movies that will be unsuccessful. Or, if there are limitations such as budget, diagnose where resources could be allocated to create a high rating movie.
+
+- **Prediction of different aspects in movies.** This model can be replicated to analyze different aspects of a movie such as runtime, release date, or top actors.
+
+- **Use New Data.** This analysis was conducted on older data that lacked recent movies, and the data wasn't well-rounded, so some movies such as Avatar were excluded from the analysis. That means that James Cameron also was excluded. If new data were used, we could see the profit that Avatar created from 2009 as well as it's re-release in 2022.
 
 
 ## For More Information
@@ -57,6 +70,8 @@ For additional info, contact Deanna Gould at [deannagould4@gmail.com](deannagoul
 
 ## Repository Structure
 
+```
+
 ├── MM Presentation.pdf
 ├── README.ipynb
 ├── README.md
@@ -64,7 +79,9 @@ For additional info, contact Deanna Gould at [deannagould4@gmail.com](deannagoul
 ├── microsoft.png
 ├── movie-analysis.ipynb
 ├── movie_set.png
+├── top-directors-np.png
 ├── top-directors.png
+├── top-genres-net.png
 ├── top-genres.png
 └── zippedData
     ├── bom.movie_gross.csv.gz
@@ -74,3 +91,5 @@ For additional info, contact Deanna Gould at [deannagould4@gmail.com](deannagoul
     ├── rt.reviews.tsv.gz
     ├── tmdb.movies.csv.gz
     └── tn.movie_budgets.csv.gz
+    
+```
